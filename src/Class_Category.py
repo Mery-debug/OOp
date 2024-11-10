@@ -3,16 +3,22 @@ class Category:
     description: str
     products: list
 
-    category_item = 0
+    category_count = 0
+    product_count = 0
 
     def __init__(self, name, description, products):
         self.name = name
         self.description = description
         self.products = products
-        self.category_item += 1
+        self.category_count += 1
+        self.product_count = len(products)
 
-    def category_count(self):
-        return self.category_item
 
-    def product_count(self):
-        return len(self.products)
+# def category_products() -> Category:
+#     return Category('fruits', 'som sweets', ['apple', 'banana', 'orange'])
+#
+#
+# y = category_products().category_count
+# x = category_products().product_count
+#
+# print(y, x)
