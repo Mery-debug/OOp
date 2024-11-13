@@ -22,7 +22,7 @@ class Category:
 
     def add_product(self, product: Product):
         self.__products.append(product)
-        self.category_count += 1
+        self.product_count += 1
 
 
 # product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
