@@ -2,12 +2,6 @@ from ctypes import Union
 
 
 class Product:
-    name: str
-    description: str
-    price: int
-    quantity: int
-    product: dict
-    list_of_product: list
 
     def __init__(self, name: str, description: str, price: float, quantity: int):
         self.name = name
@@ -21,10 +15,17 @@ class Product:
         return new
 
     @property
-    def new_price(self) -> int:
-        return self.price
+    def price(self) -> float:
+        return self.__price
 
-    @new_price.setter
-    def new_price(self, value: int):
+    @price.setter
+    def price(self, value: float):
         if value <= 0:
-            print('Цена не должна быть нулевая или отрицательная')
+            self.__price = f'Цена не должна быть нулевая или отрицательная'
+        else:
+            self.__price = value
+
+
+# product4 = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
+# product4.price = -1
+# print(product4.price)
