@@ -1,5 +1,3 @@
-from ctypes import Union
-
 
 class Product:
 
@@ -20,10 +18,10 @@ class Product:
 
     @price.setter
     def price(self, value: float):
-        if value <= 0:
-            self.__price = f'Цена не должна быть нулевая или отрицательная'
-        else:
+        if value > 0:
             self.__price = value
+        else:
+            self.__price = "Цена не должна быть нулевая или отрицательная"
 
 
 # product4 = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
