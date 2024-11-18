@@ -1,6 +1,9 @@
 
 class Product:
-
+    """
+    Класс продукты, в котором есть имя продукта, описание, цена и количество на складе,
+    есть строковое отображение
+    """
     def __init__(self, name: str, description: str, price: float, quantity: int):
         self.name = name
         self.description = description

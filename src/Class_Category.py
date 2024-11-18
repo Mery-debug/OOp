@@ -2,7 +2,10 @@ from src.Class_Product import Product
 
 
 class Category:
-
+    """
+    Класс категория, в котором есть имя категории, список продуктов,
+    описание, счетчики категории и продуктов. Так же частично работает с классом продукты из product.py
+    """
     category_count = 0
     product_count = 0
 
