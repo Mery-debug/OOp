@@ -32,4 +32,4 @@ class Product:
 
 # product4 = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
 # product4.price = -1
-# print(product4.price)
+# print(product4)
