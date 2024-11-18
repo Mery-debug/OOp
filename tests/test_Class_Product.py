@@ -16,7 +16,7 @@ def test_new_price() -> None:
 def test_new_price_1() -> None:
     product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     product4.price = -1
-    assert product4.price == "Цена не должна быть нулевая или отрицательная"
+    assert product4.price == 123000.0
 
 
 def test_new_product() -> None:
