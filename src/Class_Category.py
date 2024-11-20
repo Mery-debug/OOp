@@ -24,8 +24,11 @@ class Category:
         return product_str
 
     def add_product(self, product: Product):
-        self.__products.append(product)
-        self.product_count += 1
+        if issubclass(type(product), Product):
+            self.__products.append(product)
+            self.product_count += 1
+        else:
+            raise TypeError
 
     def __str__(self):
         product_sum = 0
