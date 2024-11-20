@@ -1,6 +1,9 @@
 
 class Product:
-
+    """
+    Класс продукты, в котором есть имя продукта, описание, цена и количество на складе,
+    есть строковое отображение
+    """
     def __init__(self, name: str, description: str, price: float, quantity: int):
         self.name = name
         self.description = description
@@ -20,10 +23,14 @@ class Product:
     def price(self, value: float):
         if value > 0:
             self.__price = value
-        else:
-            self.__price = "Цена не должна быть нулевая или отрицательная"
+        elif value <= 0:
+            print("Цена не должна быть нулевая или отрицательная")
+
+    def __str__(self):
+        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт'
+
+    def __add__(self, other):
+        add = self.__price * self.quantity + other.price * other.quantity
+        return add
 
 
-# product4 = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
-# product4.price = -1
-# print(product4.price)
