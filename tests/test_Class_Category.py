@@ -10,7 +10,7 @@ def test_category_init(category_food: Category, lst_products: list) -> None:
 
 
 def test_category_product_count(
-    category_magazines: Category, category_food: Category
+        category_magazines: Category, category_food: Category
 ) -> None:
     assert category_magazines.category_count == 1
     assert category_food.category_count == 1
@@ -37,6 +37,7 @@ def test_category(str_exp) -> None:
 
 class TestCase(unittest.TestCase):
     """ Тест класс для обработки выбрасываемой ошибки typeerror """
+
     def test_add_product(self):
         smartphone1 = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5,
                                  "S23 Ultra", 256, "Серый")
@@ -45,17 +46,19 @@ class TestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             category_smartphones.add_product("Not a product")
 
+    def test_add_category(self) -> None:
+        smartphone1 = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5,
+                                 "S23 Ultra", 256, "Серый")
+        smartphone2 = Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
+        smartphone3 = Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
+        category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, smartphone2])
+        category_smartphones.add_product(smartphone3)
+        assert category_smartphones.product_count == 3
 
-def test_add_category() -> None:
-    smartphone1 = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5,
-                             "S23 Ultra", 256, "Серый")
-    smartphone2 = Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
-    smartphone3 = Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
-    category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, smartphone2])
-    category_smartphones.add_product(smartphone3)
-    assert category_smartphones.product_count == 3
-
-
-
-
-
+    def test_str(self):
+        smartphone1 = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5,
+                                 "S23 Ultra", 256, "Серый")
+        smartphone2 = Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
+        smartphone3 = Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
+        category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, smartphone2, smartphone3])
+        assert str(category_smartphones) == "Смартфоны, количество продуктов: 27"
