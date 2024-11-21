@@ -38,11 +38,4 @@ class Category:
         return f'{self.name}, количество продуктов: {product_sum}'
 
 
-# product1 = Product("samsung", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
-# product2 = Product("iphone", "512GB, Gray space", 210000.0, 8)
-# product3 = Product("iphone", "1024GB, Синий", 31000.0, 14)
-# category1 = Category(
-#     "Смартфоны",
-#     "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
-#     [product1, product2, product3])
-# print(category1)
+
