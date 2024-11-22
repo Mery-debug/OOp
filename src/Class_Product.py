@@ -1,4 +1,23 @@
-class Product:
+from abc import ABC, abstractmethod
+
+
+class BaseProduct(ABC):
+
+    @abstractmethod
+    def __add__(self, other):
+        pass
+
+
+class MixinLog:
+
+    def __init__(self):
+        self.__repr__()
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}({self.name}, {self.description}, {self.price}, {self.quantity})"
+
+
+class Product(MixinLog, ABC):
     """
     Класс продукты, в котором есть имя продукта, описание, цена и количество на складе,
     есть строковое отображение
@@ -8,6 +27,8 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
+        print(repr(self))
 
     @classmethod
     def new_product(cls, n_product: dict):
@@ -69,3 +90,4 @@ class LawnGrass(Product):
         else:
             add = self.price * self.quantity + other.price * other.quantity
             return add
+

@@ -1,4 +1,4 @@
-from src.Class_Product import Product
+from src.Class_Product import Product, Smartphone
 
 
 class Category:
@@ -38,11 +38,10 @@ class Category:
         return f'{self.name}, количество продуктов: {product_sum}'
 
 
-# product1 = Product("samsung", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
-# product2 = Product("iphone", "512GB, Gray space", 210000.0, 8)
-# product3 = Product("iphone", "1024GB, Синий", 31000.0, 14)
-# category1 = Category(
-#     "Смартфоны",
-#     "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
-#     [product1, product2, product3])
-# print(category1)
+# smartphone1 = Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5,
+#                                  "S23 Ultra", 256, "Серый")
+# smartphone2 = Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 8, 98.2, "15", 512, "Gray space")
+# smartphone3 = Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
+# category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, smartphone2, smartphone3])
+#
+# print(str(category_smartphones))
