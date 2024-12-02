@@ -27,6 +27,8 @@ class Product(MixinLog, ABC):
         self.description = description
         self.__price = price
         self.quantity = quantity
+        if self.quantity == 0:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         super().__init__()
         print(repr(self))
 
@@ -90,4 +92,3 @@ class LawnGrass(Product):
         else:
             add = self.price * self.quantity + other.price * other.quantity
             return add
-

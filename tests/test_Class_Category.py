@@ -1,5 +1,7 @@
 import unittest
 
+import pytest
+
 from src.Class_Category import Category
 from src.Class_Product import Product, Smartphone
 
@@ -62,3 +64,7 @@ class TestCase(unittest.TestCase):
         smartphone3 = Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
         category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, smartphone2, smartphone3])
         assert str(category_smartphones) == "Смартфоны, количество продуктов: 27"
+
+    def test_avg(self):
+        category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [])
+        assert category_smartphones.avg_sum_cat() == 0
