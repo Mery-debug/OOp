@@ -27,8 +27,8 @@ class Product(MixinLog, ABC):
         self.description = description
         self.__price = price
         self.quantity = quantity
-        if self.quantity == 0:
-            raise 'Товар с нулевым количеством не может быть добавлен'
+        if quantity == 0:
+            raise ZeroDivisionError('Товар с нулевым количеством не может быть добавлен')
         super().__init__()
         print(repr(self))
 
@@ -93,3 +93,12 @@ class LawnGrass(Product):
             add = self.price * self.quantity + other.price * other.quantity
             return add
 
+
+# class NullExceptionQuantity(BaseException, Product):
+
+
+    # def __init__(self):
+    #     super().__init__()
+    # def null_quantity(self):
+    #
+    #     if Product.quantity == 0:

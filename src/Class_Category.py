@@ -43,3 +43,14 @@ class Category:
             return avg_sum / len(self.__products)
         except ZeroDivisionError:
             return 0
+
+
+# def cicle_in_cicle(lst_1: list, lst_2: list) -> int:
+#     lst_total = [[lst for lst in lst_1 for lst_ in lst_2 if lst == lst_]]
+#     # for lst in lst_1:
+#     #     for lst_ in lst_2:
+#     #         if lst == lst_:
+#     #             lst_total.append(lst)
+#     return len(lst_total)
+
+
