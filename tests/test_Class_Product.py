@@ -83,7 +83,7 @@ class TestCaseProduct(unittest.TestCase):
         assert repr(product1) == "Product(Samsung Galaxy S23 Ultra, 256GB, Серый цвет, 200MP камера, 180000.0, 5)"
 
     def test_null(self):
-        with pytest.raises(ZeroDivisionError, match='Товар с нулевым количеством не может быть добавлен'):
+        with pytest.raises(ValueError, match='Товар с нулевым количеством не может быть добавлен'):
             Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 0)
 
 
